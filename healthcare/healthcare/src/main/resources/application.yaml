@@ -1,0 +1,45 @@
+server:
+  port: 2025
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/healtcareapplication?createDatabaseIfNotExist=true&autoReconnect=true&showSSL=false
+    username: root
+    password: root
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  # GMail Properties
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: jadhavkiran2011@gmail.com
+    password: ssgw scrq mloe wcec
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  main:
+    allow-circular-references: true
+
+  #MultiPart files Configuration
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 5MB
+      max-request-size: 5MB
+      file-size-threshold: 3KB
+
+
+# Local Path for Storing PDF
+local:
+  disk:
+    path: D:/BillingSys/
